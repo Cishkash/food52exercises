@@ -39,7 +39,11 @@ class First extends Component {
     });
   }
   /**
-   * Renders the layout for the `First` component.
+   * Renders the layout for the `First` component. This first container of this
+   * component can be wrapped in a col-<size> to fit the desired size of the
+   * page. Tried to keep it very flexible and very nifty. If this was meant to
+   * be used in other parts of an application, I would expect to pass in a prop
+   * that would specify a column size instead.
    *
    * @method render
    */
@@ -48,28 +52,36 @@ class First extends Component {
 
     return (
       <div id="First">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-8 mt-1">
-              <img className="img-fluid"
-                src={this.state.content[0].image}
-                alt={this.state.content[0].subtitle}/>
+        <div className="col-lg-9">
+          <div className="container">
+            <div className="row">
+              <div className="col-lg-12">
+                <a href={this.state.content[0].link} target="_blank"
+                  rel="noopener noreferrer"> {/* https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/ */}
+                  <img className="img-fluid hero-image"
+                    src={this.state.content[0].image}
+                    alt={this.state.content[0].subtitle}/>
+                </a>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="container">
-          <div className="row">
-            {this.state.content.map( (item, index) => {
-              if (index !== 0) {
-                return (
-                  <div className="col-sm-12 col-md-6 col-lg-2" key={`image-${index}`}>
-                    <img className="img-fluid"
-                      src={item.image}
-                      alt={item.subtitle}/>
-                  </div>
-                )
-              }
-            })}
+          <div className="container">
+            <div className="row">
+              {this.state.content.map( (item, index) => {
+                if (index !== 0) {
+                  return (
+                    <div className="col-sm-12 col-md-6 col-lg-3" key={`image-${index}`}>
+                      <a href={item.link} target="_blank"
+                      rel="noopener noreferrer">
+                        <img className="img-fluid"
+                          src={item.image}
+                          alt={item.subtitle}/>
+                      </a>
+                    </div>
+                  )
+                }
+              })}
+            </div>
           </div>
         </div>
       </div>

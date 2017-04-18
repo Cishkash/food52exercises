@@ -5,7 +5,6 @@ $grid-breakpoints: (
   lg: 1120px
 );
 
-
 $container-max-widths: (
   sm: 460px,
   md: 768px,
@@ -14,12 +13,16 @@ $container-max-widths: (
 
 $grid-gutter-width-base: 5px !default;
 
+// Import font and framework
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 @import '~bootstrap/scss/bootstrap.scss';
 
+// Import route styles
 @import 'partials/first';
 
+// On to the good stuff
 body
 {
     font-family: 'Montserrat', sans-serif;
+    line-height: 1rem;
 }

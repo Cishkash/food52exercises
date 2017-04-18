@@ -1,10 +1,22 @@
 import React, { Component } from 'react';
-import '../styles/App.scss';
 
 // Import Components
 import Header from '../components/Header';
 
+
+/**
+ * App route component. Responsible for rendering the header and footer
+ * for all routes under the application's route.
+ *
+ * @class App
+ * @extends Component
+ */
 class App extends Component {
+  /**
+   * Renders the layout of the `App` component.
+   *
+   * @method render
+   */
   render() {
     return (
       <div id="App">

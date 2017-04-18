@@ -58,9 +58,15 @@ class First extends Component {
               <div className="col-lg-12">
                 <a href={this.state.content[0].link} target="_blank"
                   rel="noopener noreferrer"> {/* https://www.jitbit.com/alexblog/256-targetblank---the-most-underestimated-vulnerability-ever/ */}
-                  <img className="img-fluid hero-image"
-                    src={this.state.content[0].image}
-                    alt={this.state.content[0].subtitle}/>
+                  <div className="image-text-frame">
+                    <img className="img-fluid hero-image"
+                      src={this.state.content[0].image}
+                      alt={this.state.content[0].subtitle}/>
+                    <article className="image-text text-white">
+                      <h4>{this.state.content[0].title}</h4><br />
+                      <div>{this.state.content[0].subtitle}</div>
+                    </article>
+                  </div>
                 </a>
               </div>
             </div>
@@ -73,13 +79,19 @@ class First extends Component {
                     <div className="col-sm-12 col-md-6 col-lg-3" key={`image-${index}`}>
                       <a href={item.link} target="_blank"
                       rel="noopener noreferrer">
-                        <img className="img-fluid"
-                          src={item.image}
-                          alt={item.subtitle}/>
+                        <div className="image-text-frame">
+                          <img className="img-fluid"
+                            src={item.image}
+                            alt={item.subtitle}/>
+                          <article className="image-text text-white">
+                            <div className="image-thumb-text text-sm-center">{item.title}</div>
+                          </article>
+                        </div>
                       </a>
                     </div>
                   )
                 }
+                return null;
               })}
             </div>
           </div>

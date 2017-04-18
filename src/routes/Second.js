@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 
+/**
+ * The `Second` route component. Test on Javascript interactivity.
+ */
 class Second extends Component {
   render() {
     return (

@@ -11,6 +11,8 @@ $container-max-widths: (
   lg: 1120px
 );
 
+$text-muted: #999;
+
 $grid-gutter-width-base: 5px !default;
 
 // Import font and framework
@@ -19,6 +21,8 @@ $grid-gutter-width-base: 5px !default;
 
 // Import route styles
 @import 'partials/first';
+@import 'partials/second';
+@import 'partials/utility';
 
 // On to the good stuff
 body

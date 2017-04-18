@@ -1,0 +1,30 @@
+$primary-text: #555;
+$secondary-text: #7b9196;
+
+#Second
+{
+    .product
+    {
+        color: $primary-text;
+        .price-range
+        {
+            margin: 1.25rem 0;
+
+            color: $secondary-text;
+        }
+        .input-qty
+        {
+            width: 40px;
+            height: 30px;
+
+            color: $primary-text;
+            border: 0;
+            border-radius: 2px;
+        }
+    }
+
+    .thumbs img
+    {
+        margin: .1rem 0;
+    }
+}

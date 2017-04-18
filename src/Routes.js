@@ -4,6 +4,8 @@ import { Router, Route, IndexRoute } from 'react-router';
 // Import the route components
 import App from './routes/App.js';
 import Index from './routes/Index.js';
+import First from './routes/First.js';
+import Second from './routes/Second.js';
 
 /**
  * Sets up the application routes
@@ -13,7 +15,9 @@ import Index from './routes/Index.js';
 const Routes = (props) => (
   <Router {...props}>
     <Route path="/" component={App}>
-      <IndexRoute component={Index}/>
+      <IndexRoute component={Index} />
+      <Route path="first" component={First} />
+      <Route path="second" component={Second} />
     </Route>
   </Router>
 );

@@ -1,5 +1,18 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat');
 
+/* Modify Bootstrap breakpoints */
+$grid-breakpoints: (
+  sm: 500px,
+  md: 768px,
+  lg: 1120px
+);
+
+$container-max-widths: (
+  sm: 500px,
+  md: 720px,
+  lg: 1120px
+);
+
 body
 {
     font-family: 'Montserrat', sans-serif;

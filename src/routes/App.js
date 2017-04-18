@@ -10,9 +10,12 @@ class App extends Component {
       <div id="App">
         <div className="app-outlet">
           <Header />
-
-          {/* Yield child routes here */}
-          {this.props.children}
+          <main className="container">
+            <div className="row">
+              {/* Yield child routes here */}
+              {this.props.children}
+            </div>
+          </main>
         </div>
       </div>
     );

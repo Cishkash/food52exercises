@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat');
-
 /* Modify Bootstrap breakpoints */
 $grid-breakpoints: (
   sm: 500px,
@@ -12,6 +10,13 @@ $container-max-widths: (
   md: 720px,
   lg: 1120px
 );
+
+$grid-gutter-width-base: 5px !default;
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import 'partials/first';
 
 body
 {

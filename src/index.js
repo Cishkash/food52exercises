@@ -6,7 +6,6 @@ import { browserHistory } from 'react-router';
 import Routes from './Routes.js';
 
 // Import styles
-import 'bootstrap/scss/bootstrap.scss';
 import './styles/Base.scss';
 
 ReactDOM.render(

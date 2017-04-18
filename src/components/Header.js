@@ -27,7 +27,7 @@ class Header extends Component {
           </button>
 
           {/* Navigation menu items */}
-          <a className="navbar-brand" href="#">Food52 Interview</a>
+          <Link className="navbar-brand" to="/">Food52 Interview</Link>
           <div className="collapse navbar-collapse" id="navbarNav">
             <ul className="navbar-nav">
               <li className="nav-item">

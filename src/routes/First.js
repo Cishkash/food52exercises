@@ -51,7 +51,7 @@ class First extends Component {
     if (!this.state.content || this.state.content === null) return null;
 
     return (
-      <div id="First">
+      <section id="First">
         <div className="col-lg-9">
           <div className="container">
             <div className="row">
@@ -96,7 +96,7 @@ class First extends Component {
             </div>
           </div>
         </div>
-      </div>
+      </section>
     )
   }
 }

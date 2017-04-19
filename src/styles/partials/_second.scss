@@ -1,30 +1,72 @@
-$primary-text: #555;
-$secondary-text: #7b9196;
+$button-active: #57696d;
 
 #Second
 {
     .product
     {
-        color: $primary-text;
+        color: $primary;
         .price-range
         {
             margin: 1.25rem 0;
 
-            color: $secondary-text;
+            color: $featured;
         }
         .input-qty
         {
             width: 40px;
             height: 30px;
 
-            color: $primary-text;
+            color: $primary;
             border: 0;
             border-radius: 2px;
+        }
+        .option-select
+        {
+            display: inline-block;
+            button
+            {
+                line-height: 1.25rem;
+
+                margin: .1rem;
+                padding: .2rem .5rem;
+
+                cursor: pointer;
+                text-transform: uppercase;
+
+                color: $secondary;
+                border: 2px solid $secondary;
+
+                &:hover
+                {
+                    border-color: $button-active;
+                }
+            }
+            .active
+            {
+                color: $button-active;
+                border-color: $button-active;
+            }
+        }
+        .cart-submit
+        {
+            background-color: $featured;
+        }
+        .quantity
+        {
+            margin: 1rem 0;
+        }
+        .submission
+        {
+            margin: 1rem 0;
         }
     }
 
     .thumbs img
     {
-        margin: .1rem 0;
+        margin: .2rem 0;
+        &:first-child
+        {
+            margin: 0 0 .2rem;
+        }
     }
 }

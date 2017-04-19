@@ -1,4 +1,9 @@
- button.btn.rounded
+ button.rounded
 {
-    border-radius: 50%;
+    border-radius: 1rem;
+}
+
+button.btn-hollow
+{
+    background-color: transparent;
 }

@@ -1,10 +1,23 @@
 import React, { Component } from 'react';
 
+/**
+ * ProductSelect component is responsible for handling interaction at the scope
+ * of the `Second` route component and displaying feedback relevent to user
+ * selection.
+ *
+ * @class ProductSelect
+ * @extends React.Component
+ */
 class ProductSelect extends Component {
+  /**
+   * Renders the layout of the `ProductSelect` component.
+   *
+   * @method render
+   */
   render() {
     return (
-      <div className="row text-lg-center justify-content-lg-center">
-        <div className="col-lg-6 product">
+      <div id="ProductSelect" className="row text-lg-center justify-content-lg-center product">
+        <div className="col-lg-6">
           {this.props.product.map( (product, index) => {
             return (
               <div key={`product-${index}`}>
@@ -27,30 +40,36 @@ class ProductSelect extends Component {
                       </div>
                     )}
                   )}
-                <section className="quantity">
-                  <label htmlFor="qty">Qty: &nbsp;</label>
-                  <input type="number"
-                         className="bg-faded input-qty"
-                         name="qty"
-                         id="qty"
-                         size="3"
-                         onChange={this.props.handleChange}
-                         defaultValue={this.props.qty}/>
-                </section>
-                <button type="button" className="btn cart-submit text-white">
-                  ADD TO BASKET
-                </button><br />
-                <div className="submission">
-                  {/* Keeping this center aligned since I don't have an icon to
-                      put this against */}
-                  <a href="#">
-                    $9 Flat Rate Shipping Per Order<br />
-                    Select a product for delivery estimate
-                  </a>
                 </div>
-              </div>
-            )
-          })}
+              )
+            })}
+          </div>
+          <div className="col-lg-12 product-error">
+            <h5 className="text-white">Please select an Option first.</h5>
+          </div>
+          <div className="col-lg-6">
+            <section className="quantity">
+              <label htmlFor="qty">Qty: &nbsp;</label>
+              <input type="number"
+                     className="bg-faded input-qty"
+                     name="qty"
+                     id="qty"
+                     size="3"
+                     onChange={this.props.handleChange}
+                     defaultValue={this.props.qty}/>
+            </section>
+            <button type="button" className="btn cart-submit text-white">
+              ADD TO BASKET
+            </button><br />
+            <div className="submission">
+              {/* Keeping this center aligned since I don't have an icon to
+                  put this against */}
+              <a href="#">
+                $9 Flat Rate Shipping Per Order<br />
+                Select a product for delivery estimate
+              </a>
+            </div>
+          {this.props.children}
         </div>
       </div>
     )

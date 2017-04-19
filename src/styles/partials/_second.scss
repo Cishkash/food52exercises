@@ -49,7 +49,26 @@ $button-active: #57696d;
         }
         .cart-submit
         {
+            cursor: pointer;
+
             background-color: $featured;
+
+            &:hover
+            {
+                background-color: #5d839b;
+            }
+        }
+        .product-error
+        {
+            margin: 1rem 0 0;
+
+            background-color: $error;
+            h5
+            {
+                line-height: 2rem;
+
+                margin: 0;
+            }
         }
         .quantity
         {
@@ -63,10 +82,51 @@ $button-active: #57696d;
 
     .thumbs img
     {
-        margin: .2rem 0;
+        cursor: pointer;
+
         &:first-child
         {
-            margin: 0 0 .2rem;
+            margin: 0 .1rem .3rem;
+        }
+    }
+
+    .favorite-social
+    {
+        button
+        {
+            margin: 0 .5rem;
+            padding: .5rem;
+
+            cursor: pointer;
+            transition: opacity .5s;
+            text-transform: uppercase;
+        }
+
+        .love
+        {
+            color: $love;
+            border: 2px solid $love;
+        }
+        .save
+        {
+            color: $save;
+            border: 2px solid $save;
+        }
+        .love:hover,
+        .save:hover
+        {
+            opacity: .75;
+        }
+        .share
+        {
+            color: #909090;
+            border: 2px solid $share;
+            background-color: $share;
+
+            &:hover
+            {
+                color: #949494;
+            }
         }
     }
 }

@@ -48,8 +48,7 @@ class Second extends Component {
       this.setState({
         product: response.product,
         qty: 1,
-        selectedImage: response.product[0].options[1].option_image,
-        selectedProduct: response.product[0].options[1]
+        selectedImage: response.product[0].product_images[1]
       });
       // I'd also catch any request errors but again, a stub.
     });
@@ -150,7 +149,9 @@ class Second extends Component {
                   })}
                 </div>
                 <div className="col-lg-9" data-test="selected-image">
-                  <img className="img-fluid" src={this.state.selectedImage}/>
+                  <img className="img-fluid"
+                    src={this.state.selectedImage}
+                    alt="Selected"/>
                 </div>
               </div>
             </section>
@@ -160,7 +161,24 @@ class Second extends Component {
                 product={this.state.product}
                 selectedProduct={this.state.selectedProduct}
                 qty={this.state.qty}
-                updateSelectedProduct={this.updateSelectedProduct}/>
+                updateSelectedProduct={this.updateSelectedProduct}>
+                {/* Yielded to retain the column width of the ProductSelect
+                    component */}
+                <div className="favorite-social">
+                  <button type="button"
+                    className="rounded btn-hollow love">
+                    <i className="fa fa-heart-o"></i> Love
+                  </button>
+                  <button type="button"
+                    className="rounded btn-hollow save">
+                    <i className="fa fa-plus" aria-hidden="true"></i> Save
+                  </button>
+                  <button type="button"
+                    className="rounded bg-faded share">
+                    <i className="fa fa-share" aria-hidden="true"></i> Share
+                  </button>
+                </div>
+              </ProductSelect>
             </section>
           </div>
         </div>

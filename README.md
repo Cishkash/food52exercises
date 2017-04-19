@@ -1,8 +1,8 @@
 This will require
   - npm/yarn (Choose yarn yay!)
 
-Clone the repo
-Do a yarn install
+Clone the repo<br>
+Do a yarn install<br>
 `yarn start`
 
 ...and I believe that's it!

@@ -24,7 +24,8 @@ class Second extends Component {
       product: [],
       qty: 0,
       selectedImage: '',
-      selectedProduct: null
+      selectedProduct: null,
+      submitError: false
     }
     // Bind the scope of `this` for closure purposes.
     // @NOTE: (And fun fact) Attempting to access `this` in the scope of this
@@ -32,6 +33,7 @@ class Second extends Component {
     //        the scope of the child component. So, we manually bind `this`
     //        scope from the constructor.
     this.updateSelectedProduct = this.updateSelectedProduct.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   /**
@@ -70,6 +72,25 @@ class Second extends Component {
   }
 
   /**
+   * Some mock validation that show/hides the error alert on the `ProductSelect`
+   * component.
+   *
+   * @method handleSubmit
+   * @returns {undefined}
+   */
+  handleSubmit() {
+    if (!this.state.selectedProduct) {
+      this.setState({
+        submitError: true
+      });
+    } else {
+      this.setState({
+        submitError: false
+      });
+    }
+  }
+
+  /**
    * Updates the standalone images and removes the selected product for the
    * enhancement mentioned on the `updateSelectedImage` method.
    *
@@ -96,7 +117,6 @@ class Second extends Component {
    * @returns {undefined}
    */
   updateSelectedProduct(option) {
-    console.log(option)
     this.setState({
       selectedImage: option.option_image,
       selectedProduct: option
@@ -158,9 +178,11 @@ class Second extends Component {
             <section className="col-lg-6">
               <ProductSelect
                 handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
                 product={this.state.product}
                 selectedProduct={this.state.selectedProduct}
                 qty={this.state.qty}
+                submitError={this.state.submitError}
                 updateSelectedProduct={this.updateSelectedProduct}>
                 {/* Yielded to retain the column width of the ProductSelect
                   component */}

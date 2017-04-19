@@ -16,8 +16,8 @@ class ProductSelect extends Component {
    */
   render() {
     return (
-      <div id="ProductSelect" className="row text-lg-center justify-content-lg-center product">
-        <div className="col-lg-6">
+      <div id="ProductSelect" className="row text-lg-center justify-content-lg-around product">
+        <div className="col-lg-12">
           {this.props.product.map( (product, index) => {
             return (
               <div key={`product-${index}`}>
@@ -44,7 +44,7 @@ class ProductSelect extends Component {
               )
             })}
           </div>
-          <div className="col-lg-11 product-error">
+          <div className={`col-lg-11 product-error ${!this.props.submitError ? 'hidden-sm-up' : ''}`}>
             <h5 className="text-white">Please select an Option first.</h5>
           </div>
           <div className="col-lg-6">
@@ -58,7 +58,9 @@ class ProductSelect extends Component {
                      onChange={this.props.handleChange}
                      defaultValue={this.props.qty}/>
             </section>
-            <button type="button" className="btn cart-submit text-white">
+            <button type="button"
+              onClick={this.props.handleSubmit}
+              className="btn cart-submit text-white">
               ADD TO BASKET
             </button><br />
             <div className="submission">

@@ -14,6 +14,11 @@ class Header extends Component {
    * @method render
    */
   render() {
+    function toggleNav() {
+      let element = document.getElementById('navbarNav');
+
+      element.classList.toggle('show');
+    }
     return (
       <header id="Header">
         <nav className="navbar navbar-toggleable-md navbar-light bg-faded">
@@ -21,8 +26,7 @@ class Header extends Component {
           {/* Mobile menu toggle */}
           <button className="navbar-toggler navbar-toggler-right"
             type="button" data-toggle="collapse"
-            data-target="#navbarNav" aria-controls="navbarNav"
-            aria-expanded="false" aria-label="Toggle navigation">
+            onClick={toggleNav}>
             <span className="navbar-toggler-icon"></span>
           </button>
 

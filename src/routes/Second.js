@@ -145,12 +145,12 @@ class Second extends Component {
             </section>
             <section className="col-lg-6">
               <ProductSelect
-                handleChange={this.handleChange}
-                handleSubmit={this.handleSubmit}
                 product={this.state.product}
                 selectedProduct={this.state.selectedProduct}
                 qty={this.state.qty}
                 submitError={this.state.submitError}
+                handleChange={this.handleChange}
+                handleSubmit={this.handleSubmit}
                 updateSelectedProduct={this.updateSelectedProduct}>
                 {/* Yielded to retain the column width of the ProductSelect
                   component */}

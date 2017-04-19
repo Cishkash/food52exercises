@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 
+import ProductImage from '../components/ProductImage.js';
 import ProductSelect from '../components/ProductSelect.js';
 
 /**
@@ -32,8 +33,9 @@ class Second extends Component {
     //        component as a closure from a child component unfortunately binds
     //        the scope of the child component. So, we manually bind `this`
     //        scope from the constructor.
-    this.updateSelectedProduct = this.updateSelectedProduct.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.updateSelectedImage = this.updateSelectedImage.bind(this);
+    this.updateSelectedProduct = this.updateSelectedProduct.bind(this);
   }
 
   /**
@@ -135,45 +137,11 @@ class Second extends Component {
         <div className="container-fluid">
           <div className="row align-items-lg-center">
             <section className="col-lg-6">
-              <div className="row justify-content-lg-start">
-                <div className="col-lg-2 thumbs">
-                  {this.state.product.map( (product) => {
-                    let arr = [];
-
-                    // The comingled images threw me off a bit
-                    arr.push(product.product_images.map( (image, index) => {
-                      return (
-                        <a onClick={() => this.updateSelectedImage(image)}>
-                          <img key={`thumb-image-${index}`}
-                               className="img-fluid" src={image}
-                               alt={`Product thumbnail ${index}`}/>
-                        </a>
-                      )
-                    }));
-
-                    arr.push(product.options.map( (option, index) => {
-                      return (
-                        <a onClick={() => this.updateSelectedProduct(option)}>
-                          <img key={`thumb-option-${index}`}
-                               className="img-fluid" src={option.option_image}
-                               alt={`Product thumbnail ${index}`}/>
-                        </a>
-                      )
-                    }));
-
-                    arr = arr.reduce( (a, b) => {
-                      return a.concat(b);
-                    });
-
-                    return arr;
-                  })}
-                </div>
-                <div className="col-lg-9" data-test="selected-image">
-                  <img className="img-fluid"
-                    src={this.state.selectedImage}
-                    alt="Selected"/>
-                </div>
-              </div>
+              <ProductImage
+                product={this.state.product}
+                selectedImage={this.state.selectedImage}
+                updateSelectedImage={this.updateSelectedImage}
+                updateSelectedProduct={this.updateSelectedProduct}/>
             </section>
             <section className="col-lg-6">
               <ProductSelect

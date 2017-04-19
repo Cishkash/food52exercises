@@ -163,7 +163,7 @@ class Second extends Component {
                 qty={this.state.qty}
                 updateSelectedProduct={this.updateSelectedProduct}>
                 {/* Yielded to retain the column width of the ProductSelect
-                    component */}
+                  component */}
                 <div className="favorite-social">
                   <button type="button"
                     className="rounded btn-hollow love">

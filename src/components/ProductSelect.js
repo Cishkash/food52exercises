@@ -44,7 +44,7 @@ class ProductSelect extends Component {
               )
             })}
           </div>
-          <div className="col-lg-12 product-error">
+          <div className="col-lg-11 product-error">
             <h5 className="text-white">Please select an Option first.</h5>
           </div>
           <div className="col-lg-6">
@@ -62,12 +62,17 @@ class ProductSelect extends Component {
               ADD TO BASKET
             </button><br />
             <div className="submission">
-              {/* Keeping this center aligned since I don't have an icon to
-                  put this against */}
-              <a href="#">
-                $9 Flat Rate Shipping Per Order<br />
-                Select a product for delivery estimate
-              </a>
+              <div className="row text-lg-left">
+                <div className="col-lg-2">
+                  <i className="fa fa-truck large-icon" aria-hidden="true"></i>
+                </div>
+                <div className="col-lg-10">
+                  <a href="#">
+                    $9 Flat Rate Shipping Per Order<br />
+                    Select a product for delivery estimate
+                  </a>
+                </div>
+              </div>
             </div>
           {this.props.children}
         </div>

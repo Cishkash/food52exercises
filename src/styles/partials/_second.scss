@@ -77,6 +77,20 @@ $button-active: #57696d;
         .submission
         {
             margin: 1rem 0;
+
+            transition: color .5s;
+
+            color: $primary;
+
+            &:hover
+            {
+                color: $featured;
+            }
+
+            a
+            {
+                color: inherit;
+            }
         }
     }
 
